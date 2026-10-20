@@ -1,0 +1,50 @@
+/* ===== Base: mesa de madeira ===== */
+:root{--wood:#4a2f19;--wood2:#6b4425;--cream:#f3e6c8;--felt:#1f7a3d;--red:#d63a2f;--blue:#2f6fdd;--gold:#f2b632}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:radial-gradient(circle at 50% 30%,var(--wood2),var(--wood));color:var(--cream);
+  font-family:"Trebuchet MS","Segoe UI",sans-serif;display:flex;justify-content:center;align-items:flex-start;overflow-x:hidden}
+
+.screen{display:none;width:100%;max-width:1000px;padding:12px}
+.screen.on{display:block}
+#game.on{display:flex;flex-direction:column;gap:8px}
+
+/* ===== Painéis (menu / fim de jogo) ===== */
+.panel{background:rgba(25,14,5,.78);border:3px solid var(--gold);border-radius:14px;padding:22px;margin:14px auto;max-width:560px}
+#over.on{position:fixed;inset:0;max-width:none;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.65);overflow:auto}
+h1{font-family:"Arial Black",Impact,sans-serif;font-size:2rem;text-align:center;margin-bottom:12px;color:var(--gold)}
+h2{font-size:1rem;margin:14px 0 6px;color:var(--gold)}
+.group{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;cursor:pointer;border-radius:8px;border:2px solid var(--gold);padding:9px 16px;color:var(--cream);background:transparent}
+button:focus-visible,input:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.opt.on{background:var(--gold);color:#2a1808;font-weight:bold}
+.primary{width:100%;margin-top:16px;background:var(--felt);border-color:#4fd47c;font-weight:bold;font-size:1.1rem}
+#again{flex:1}
+.names{display:grid;gap:8px}
+.names label{display:flex;align-items:center;gap:8px}
+.names i{width:22px;height:22px;border-radius:50%;border:2px solid #fff;flex:none}
+input{flex:1;padding:8px;border-radius:6px;border:2px solid var(--wood2);background:var(--cream);color:#2a1808;font:inherit}
+.help{font-size:.82rem;line-height:1.6;margin-top:16px;opacity:.85}
+.rank table,#stats{width:100%;border-collapse:collapse}
+.rank td,#stats td{padding:4px 6px;border-bottom:1px solid rgba(243,230,200,.2)}
+#stats td:not(:first-child){text-align:center;font-weight:bold}
+#stats td:first-child{opacity:.85}
+.final{text-align:center;font-size:1.4rem;margin-bottom:10px}
+
+/* ===== HUD ===== */
+#hud{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:#120a03;border:2px solid var(--gold);border-radius:10px;padding:6px 14px}
+.team{display:flex;align-items:center;gap:12px;font-weight:bold}
+.team.right{justify-content:flex-end}
+.team strong{font-family:"Courier New",monospace;font-size:2.2rem;background:#000;color:#ff5a3c;padding:0 12px;border-radius:6px;min-width:48px;text-align:center}
+.center{display:flex;flex-direction:column;align-items:center;min-width:130px}
+#clock{font-family:"Courier New",monospace;font-size:1.8rem;color:#7dff9a}
+#turn{font-weight:bold}
+
+/* ===== Canvas e rodapé ===== */
+#cv{width:100%;height:auto;aspect-ratio:900/560;border-radius:10px;border:3px solid #000;touch-action:none;cursor:crosshair;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#info{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.95rem}
+#msg{color:var(--gold);font-weight:bold;flex:1;text-align:center}
+#back{padding:5px 12px}
+
+@media(max-width:600px){.team span{font-size:.8rem}.team strong{font-size:1.6rem}h1{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}

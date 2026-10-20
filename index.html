@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Futebol de Botão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== MENU PRINCIPAL ========== -->
+  <section id="menu" class="screen on">
+    <div class="panel">
+      <h1>Futebol de Botão</h1>
+
+      <h2>Modo de jogo</h2>
+      <div class="group">
+        <button class="opt on" data-mode="local">1 vs 1 Local</button>
+        <button class="opt" data-mode="pc">1 vs PC</button>
+      </div>
+
+      <h2>Tempo da partida</h2>
+      <div class="group">
+        <button class="opt" data-min="3">3 min</button>
+        <button class="opt on" data-min="5">5 min</button>
+        <button class="opt" data-min="10">10 min</button>
+      </div>
+
+      <h2>Times</h2>
+      <div class="names">
+        <label><i style="background:#d63a2f"></i><input id="n0" maxlength="14" value="Jogador 1"></label>
+        <label><i style="background:#2f6fdd"></i><input id="n1" maxlength="14" value="Jogador 2"></label>
+      </div>
+
+      <button id="start" class="primary">Apitar o início</button>
+
+      <h2>Melhores vitórias</h2>
+      <div id="rank1" class="rank"></div>
+
+      <p class="help">
+        <b>Mouse/toque:</b> arraste a partir do seu botão para trás e solte.<br>
+        <b>Jogador 1:</b> A/D troca de botão, W/S gira a mira, Espaço carrega e dispara.<br>
+        <b>Jogador 2:</b> ←/→ troca, ↑/↓ gira, Enter carrega e dispara.<br>
+        <b>Controle:</b> analógico esquerdo mira, LB/RB troca, A/X carrega e dispara.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== TELA DE JOGO ========== -->
+  <section id="game" class="screen">
+    <header id="hud">
+      <div class="team"><span id="n0h"></span><strong id="s0">0</strong></div>
+      <div class="center"><span id="clock">05:00</span><small id="turn"></small></div>
+      <div class="team right"><strong id="s1">0</strong><span id="n1h"></span></div>
+    </header>
+    <canvas id="cv" width="900" height="560"></canvas>
+    <footer id="info"><span id="sel"></span><span id="msg"></span><button id="back">Menu</button></footer>
+  </section>
+
+  <!-- ========== FIM DE JOGO ========== -->
+  <section id="over" class="screen">
+    <div class="panel">
+      <h1 id="res"></h1>
+      <p id="final" class="final"></p>
+      <table id="stats"></table>
+      <h2>Ranking</h2>
+      <div id="rank2" class="rank"></div>
+      <div class="group">
+        <button id="again" class="primary">Jogar de novo</button>
+        <button id="tomenu" class="opt">Menu</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
